@@ -5,7 +5,7 @@ $a=$_SESSION['uname'];
 
 if($a=="")
 {
-header('location:http://localhost:8080/DEVASOM_PAGE/');
+header('location: .././index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ header('location:http://localhost:8080/DEVASOM_PAGE/');
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>One Page Wonder - Start Bootstrap Template</title>
+    <title>Devasom Board</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,6 +26,7 @@ header('location:http://localhost:8080/DEVASOM_PAGE/');
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="css/sl.css" />
 
     <!-- Custom styles for this template -->
     <link href="css/one-page-wonder.min.css" rel="stylesheet">
@@ -33,11 +34,26 @@ header('location:http://localhost:8080/DEVASOM_PAGE/');
   </head>
 
   <body>
-
+<!-- navbar -->
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+ 
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="products.php">XYZ Webstore</a>
+        </div>
+    </div>
+</div>
+<!-- /navbar -->
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">K.D.B</a>
+        <a class="navbar-brand" href="#">Devasom Board</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,19 +61,14 @@ header('location:http://localhost:8080/DEVASOM_PAGE/');
           <ul class="navbar-nav ml-auto">
 		    <li class="nav-item" style="color:#FFFFFF; font-weight:bolder;">
 			<?php
-							
-						
-							
 							$con=mysqli_connect("localhost","root","","devasom");
  $fetchqry = "SELECT image FROM `register` where uname='$a'";
 	$result=mysqli_query($con,$fetchqry);
 	$num=mysqli_num_rows($result);
 	if($num > 0){
-    while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){ 
+    while($row = mysqli_fetch_array($result,mysqli_ASSOC)){ 
 	
 	?>
-
- 
       <tr><td ><?php echo $a;?>&nbsp;<img src="image/<?php echo $row['image']?>" style="width:50px;  border-radius: 50%;" /> </td>
 </tr>  <?php
 }}?>
@@ -74,75 +85,58 @@ header('location:http://localhost:8080/DEVASOM_PAGE/');
       </div>
     </nav>
 
-    <header class="masthead text-center text-white" style="background-image:url(img/b.jpg); background-repeat:no-repeat; height:600px;">
+    <header class="masthead text-center text-white" style="background-image:url(image/img2.jpg); background-repeat:no-repeat; height:600px;">
       <div class="masthead-content" >
         <div class="container" style="color:#6666FF;">
-          <h1 class="masthead-heading mb-0"></h1>
-          <h2 class="masthead-subheading mb-0"></h2>
-   
+          <h2 class="masthead-heading mb-0" style="color: white; text-align: left; font-size: 50px;">Welcome to Sabarimala Devasom</h2>
+          <h4 class="masthead-subheading mb-0" style="color: white; text-align: left; font-size: 24px;">Thrivanathapuram</h4>
+          <br>
+          <br>
+          <br>
+          <br>
+   <button class="btn btn-default"><a href="#more">Go to Booking</a></button>
         </div>
       </div>
   
     </header>
 
     <section>
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 order-lg-2">
-            <div class="p-5">
-              <img class="img-fluid rounded-circle" src="./image/img3.jpg" alt="">
-            </div>
-          </div>
-          <div class="col-lg-6 order-lg-1">
-            <div class="p-5">
-              <h2 class="display-4">Let your body be your holly temple </h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
-            </div>
-          </div>
+      <div class="container" id="more">
+        <div class="jumbotron">
+        <center><h2 class="masthead-heading mb-0">Swami Saranam...</h2></center>
         </div>
-      </div>
-    </section>
+        <?php
+// start session
 
-    <section>
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="p-5">
-              <img class="img-fluid rounded-circle" src="./image/2.jpg" alt="">
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="p-5">
-              <h2 class="display-4">Let thy holly temple be thy body</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 order-lg-2">
-            <div class="p-5">
-              <img class="img-fluid rounded-circle" src="./image/1.jpg" alt="">
-            </div>
-          </div>
-          <div class="col-lg-6 order-lg-1">
-            <div class="p-5">
-              <h2 class="display-4">Praying is a perfect peace</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
-            </div>
-          </div>
-        </div>
+ 
+// include classes
+include_once "config/database.php";
+include_once "product.php";
+include_once "product_image.php";
+ 
+// get database connection
+$database = new Database();
+$db = $database->getConnection();
+ 
+// initialize objects
+$product = new Product($db);
+$product_image = new ProductImage($db);
+ 
+// include page header HTML
+include_once 'layout_header.php';
+ 
+// content will be here
+ 
+// include page footer HTML
+include_once 'layout_footer.php';
+?>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="py-5 bg-black">
       <div class="container">
-        <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2018</p>
+        <p class="m-0 text-center text-white small">Copyright &copy; Devasom</p>
       </div>
       <!-- /.container -->
     </footer>

@@ -4,7 +4,7 @@
   <title>Devasom Board</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
@@ -89,14 +89,11 @@
 
 <?php
 session_start();
-
-
 	define('DB_SERVER', 'localhost');
 	define('DB_USERNAME', 'root');
 	define('DB_PASSWORD', '');
 	define('DB_DATABASE', 'devasom');
 	$db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
-
 if(isset($_POST['login']))
 {
 $pwd=$_POST['pass'];
@@ -106,13 +103,12 @@ $result=mysqli_query($db,$s);
 		$row=mysqli_fetch_array($result,MYSQLI_ASSOC);
 if(mysqli_num_rows($result) >= 1)
 {
-
 $_SESSION['id']=$ar[0];
 $_SESSION['uname']=$_POST['name'];
 if($_POST['name']=='admin' && $_POST['pass']=="123"){
-header('location: adminhome.php');
+header('location: ./panel');
 }else
-header('location: template/');
+header('location: ./panel/user.php');
 }
 else
 {
@@ -122,7 +118,6 @@ else
 			</script>
 <?php
 }}
-
 			
 ?>
 
