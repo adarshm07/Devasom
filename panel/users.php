@@ -108,27 +108,21 @@ include("inc/config.inc.php");
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./index.php">
+            <a class="nav-link" href="./users.php">
               <i class="menu-icon mdi mdi-television"></i>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
   <li class="nav-item">
-            <a class="nav-link" href=./change.php">
+            <a class="nav-link" href=./change.php>
               <i class="menu-icon mdi mdi-user"></i>
               <span class="menu-title">Change Password</span>
             </a>
 </li>
 <li class="nav-item">
-            <a class="nav-link" href="./complaint/view_complaint.php">
+            <a class="nav-link" href="./complaint.php">
               <i class="menu-icon mdi mdi-user"></i>
-              <span class="menu-title">View Complaint</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./users.php">
-              <i class="menu-icon mdi mdi-user"></i>
-              <span class="menu-title">View Products</span>
+              <span class="menu-title">File a Complaint</span>
             </a>
           </li>
         </ul>

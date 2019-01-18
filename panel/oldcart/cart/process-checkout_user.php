@@ -47,22 +47,20 @@ include("inc/header.php");
 $_SESSION['pp']=$product_price;$_SESSION['pq']=$product_qty;$_SESSION['pt']=$total;
 				echo $currency; ?><input type="text" name="pt" value="<?php echo sprintf("%01.2f", ($product_price * $product_qty)); ?>"/></td>
 				<td>				
-				<a href="#" class="btn btn-danger remove-item" data-code="<?php echo $product_code; ?>"><i class="glyphicon glyphicon-trash"></i></a>
+				<!--<a href="#" class="btn btn-danger remove-item" data-code="<?php echo $product_code; ?>"><i class="glyphicon glyphicon-trash"></i></a> -->
 				</td>
 				</tr>
 			 <?php } ?>
 			<tfoot>
-			<br>
-			<br>
 			<tr>
-			<td><a href="../.././admin.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Shopping</a></td>
+			<td><a href="../.././users.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Shopping</a></td>
 			<td colspan="2"></td>
 			<?php 
 			if(isset($total)) {
 			?>	
 			<td class="text-center cart-products-total"><strong>Total <?php echo $currency.sprintf("%01.2f",$total); ?></strong></td>
 			<td>
-			<input type="submit" name="check" class="btn btn-success btn-block" value="Checkout"/></td>
+			<!--<input type="submit" name="check" class="btn btn-success btn-block" value="Checkout"/></td>-->
 			<?php } ?>
 			</tr>
 			</tfoot>			
@@ -71,8 +69,6 @@ $_SESSION['pp']=$product_price;$_SESSION['pq']=$product_qty;$_SESSION['pt']=$tot
 				echo "Your Cart is empty";
 			?>
 			<tfoot>
-			<br>
-			<br>
 			<tr>
 			<td><a href="products.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Shopping</a></td>
 			<td colspan="2"></td>

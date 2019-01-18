@@ -74,7 +74,7 @@ $_SESSION['pp']=$product_price;$_SESSION['pq']=$product_qty;$_SESSION['pt']=$tot
 			<br>
 			<br>
 			<tr>
-			<td><a href="admin.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Shopping</a></td>
+			<td><a href="./users.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Shopping</a></td>
 			<td colspan="2"></td>
 			</tr>
 			</tfoot>
@@ -105,7 +105,7 @@ $q= mysqli_query($db,"UPDATE  `shopping_cart`.`shop_products` SET  `qty` =  '$qq
 				
 			}
 
-	header('location:oldcart/cart/process-checkout.php');
+	header('location:oldcart/cart/process-checkout_user.php');
 }}
 ?>
 </form><style>

@@ -110,12 +110,6 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-  <li class="nav-item">
-            <a class="nav-link" href="change.php">
-              <i class="menu-icon mdi mdi-user"></i>
-              <span class="menu-title">Change Password</span>
-            </a>
-</li>
 <li class="nav-item">
             <a class="nav-link" href="./product/stock.php">
               <i class="menu-icon mdi mdi-user"></i>
