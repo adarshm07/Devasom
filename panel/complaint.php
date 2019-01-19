@@ -38,30 +38,18 @@ session_start();
           <li class="nav-item">
          
           </li>
-          <?php
- 
- //mysqli Procedural
- $conn = mysqli_connect("localhost","root","","devasom");
- if (!$conn) {
-   die("Connection failed: " . mysqli_connect_error());
- }
-  
- ?>
-         
-        </ul> <a href="./logout.php" style="color:white;">Logout</a>
+          <li class="nav-item">
+            <?php
+            include_once('.././login/db.php');
+              if (isset($_SESSION['username'])) : ?>
+              <a class="nav-link" href=".././login/index.php?logout='1'" style="color: red;">Log Out</a>
+              <?php endif ?>
+            </li>
         <ul class="navbar-nav navbar-nav-right">
           
-          <li class="nav-item dropdown d-none d-xl-inline-block">
-            <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+          <li class="nav-item">
             <?php
-                                                 
-                define('conString', 'mysqli:host=localhost;dbname=devasom');
-                define('dbUser', 'root');
-                define('dbPass', '');
-                print $_SESSION['id']['name'];
-            ?>
-            <?php
-            $a=$_SESSION['uname'];
+            $a=$_SESSION['username'];
             echo $a;?> 
             </a>
           </li>
@@ -130,7 +118,11 @@ session_start();
         </ul>
       </nav>
     <div class="container" style="margin: 20px;">
-    <div class="jumbotron">
+    <div class="jumbotron" style="margin-bottom: 2rem;
+    background-color: #031a31;
+    border-radius: 0.3rem;
+    width: 50%;
+    margin-left: 220px;">
     <?php
 //Establishing Connection with Server
 $connection = mysqli_connect("localhost", "root", "");
@@ -185,7 +177,7 @@ mysqli_close($connection);
             <input type="text" name="subject" class="form-control margin-bottom-10 error-msg" placeholder="Subject"><br>
             <textarea rows="5" cols="25" placeholder="Complaint" class="form-control margin-bottom-10 error-msg" name="description"></textarea><br>
             <br>
-            <input class="btn-lg btn-success" style="float: right;" type="submit" name="submit" value="Submit" />
+            <input class="btn btn-success" style="float: right;" type="submit" name="submit" value="Submit" />
 </div>
 </div>
 </form>

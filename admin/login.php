@@ -9,10 +9,10 @@
 <body>
 
 	<div class="header">
-		<h2>User Login</h2>
+		<h2>Login</h2>
 	</div>
 	
-	<form method="post" action="index.php">
+	<form method="post" action="login.php">
 
 		<?php include('errors.php'); ?>
 
@@ -29,9 +29,6 @@
 		</div>
 		<p>
 			Not yet a member? <a href="register.php">Sign up</a>
-		</p>
-		<p>
-			Admin <a href="./admin/login.php">Sign in</a>
 		</p>
 	</form>
 

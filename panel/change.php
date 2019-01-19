@@ -45,7 +45,7 @@
   
  ?>
          
-        </ul> <a href="./logout.php" style="color:white;">Logout</a>
+        </ul> <a href="".././login/index.php?logout='1'"" style="color:white;">Logout</a>
         <ul class="navbar-nav navbar-nav-right">
           
           <li class="nav-item dropdown d-none d-xl-inline-block">

@@ -123,7 +123,7 @@
             </a>
           </li>
 <li class="nav-item">
-            <a class="nav-link" href=".././view_complaint.php">
+            <a class="nav-link" href="view_complaint.php">
               <i class="menu-icon mdi mdi-user"></i>
               <span class="menu-title">View Complaint</span>
             </a>
@@ -131,7 +131,7 @@
           <li class="nav-item">
             <a class="nav-link" href=".././admin.php">
               <i class="menu-icon mdi mdi-user"></i>
-              <span class="menu-title">View Products</span>
+              <span class="menu-title">Booking Details</span>
             </a>
           </li>
        
