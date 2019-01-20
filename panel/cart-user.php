@@ -102,6 +102,7 @@ header('location: .././login');
       <table style="margin: 40px; border: 1px solid;">
 <tr><td style="border: 1px solid; text-align: center;">Product</td>
 <td style="border: 1px solid; text-align: center;">Price</td>
+<td style="border: 1px solid; text-align: center;">Product Image</td>
 <td style="border: 1px solid; text-align: center;">Quantity</td>
 <td style="border: 1px solid; text-align: center;">Buy</td>
 </tr>
@@ -122,7 +123,7 @@ header('location: .././login');
 				<form class="product-form" style="text-align:center;">
 					<td style="padding: 20px; border: 1px solid;"><h4><?php echo $row["product_name"]; ?></h4></td>
 					<td style="padding: 20px; border: 1px solid;"><div><?php echo $currency; echo $row["product_price"]; ?></div></td>
-                    <td style="padding: 20px; border: 1px solid;"><div><img  class="product_image"  src="./images/<?php echo $row["product_image"]; ?></div></td>    
+                    <td style="padding: 20px; border: 1px solid;"><div><img  class="product_image"  src="./images/<?php echo $row["product_image"]; ?>"></div></td>    
                     <td style="padding: 20px; border: 1px solid;"><div style="text-align:center;">
 							Qty :
 							<select name="product_qty">
