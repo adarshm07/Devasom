@@ -30,6 +30,18 @@ header('location: .././login');
 
     <!-- Custom styles for this template -->
     <link href="css/one-page-wonder.min.css" rel="stylesheet">
+    <style>
+    .navbar-nav {
+    text-transform: uppercase;
+    }
+    .btn:hover{
+      background-color: blue;
+    }
+    a:hover{
+      text-decoration: none;
+      color: white;
+    }
+    </style>
 
   </head>
 
@@ -81,7 +93,7 @@ header('location: .././login');
           <br>
           <br>
           <br>
-   <button class="btn btn-default"><a href="#more">Go to Booking</a></button>
+   <button class="btn-lg btn"><a href=".././panel/cart-user.php">Go to Booking</a></button>
         </div>
       </div>
   

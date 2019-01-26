@@ -31,7 +31,15 @@ header('location: .././login');
     <!-- Custom styles for this template -->
     <link href=".././template/css/one-page-wonder.min.css" rel="stylesheet">
     <link href=".././template/css/font-awesome.css" rel="stylesheet">
-
+    <style>
+    .navbar-nav {
+    text-transform: uppercase;
+    }
+    a:hover{
+      text-decoration: none;
+      color: white;
+    }
+    </style>
   </head>
 
   <body>
@@ -47,13 +55,7 @@ header('location: .././login');
 		    <li class="nav-item" style="color:#FFFFFF; font-weight:bolder;">
 
             </li>
-            <li><a href="view_cart_user.php"  id="cart-info" title="View Cart"> Cart <span class="glyphicon glyphicon-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span><?php 
-			if(isset($_SESSION["products"])){
-				echo count($_SESSION["products"]); 
-			} else {
-				
-			}
-			?></a></li>
+            
 			<li>
             <li class="nav-item">
               <a class="nav-link" href="change.php">Change Password</a>
@@ -80,31 +82,23 @@ header('location: .././login');
         </div>
       </div>
     </nav>
-
-    <header class="masthead text-center text-white" style="background-image:url(.././template/image/img2.jpg); background-repeat:no-repeat; height:600px;">
-      <div class="masthead-content" >
-        <div class="container" style="color:#6666FF;">
-          <h2 class="masthead-heading mb-0" style="color: white; text-align: left; font-size: 50px;">Welcome to Sabarimala Devasom</h2>
-          <h4 class="masthead-subheading mb-0" style="color: white; text-align: left; font-size: 24px;">Thrivanathapuram</h4>
-          <br>
-          <br>
-          <br>
-          <br>
-   <button class="btn btn-default"><a href="#more">Go to Booking</a></button>
-        </div>
-      </div>
-  
-    </header>
-
+    <br><br><br><br>
     <section>
       <div class="container" id="more">
-        
-      <table style="margin: 40px; border: 1px solid;">
-<tr><td style="border: 1px solid; text-align: center;">Product</td>
-<td style="border: 1px solid; text-align: center;">Price</td>
-<td style="border: 1px solid; text-align: center;">Product Image</td>
-<td style="border: 1px solid; text-align: center;">Quantity</td>
-<td style="border: 1px solid; text-align: center;">Buy</td>
+      <button class="btn-lg btn"><a href="view_cart_user.php"  id="cart-info" title="View Cart"> Cart <span class="glyphicon glyphicon-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span><?php 
+			if(isset($_SESSION["products"])){
+				echo count($_SESSION["products"]); 
+			} else {
+				
+			}
+			?></a></button>
+      <center> 
+      <table style="margin: 40px; border: 0px solid;">
+<tr><td style="border-bottom: 1px solid; text-align: center;">Product</td>
+<td style="border-bottom: 1px solid; text-align: center;">Price</td>
+<td style="border-bottom: 1px solid; text-align: center;">Product Image</td>
+<td style="border-bottom: 1px solid; text-align: center;">Quantity</td>
+<td style="border-bottom: 1px solid; text-align: center;">Buy</td>
 </tr>
                         <?php
                         include_once("inc/db_connect.php");
@@ -121,10 +115,10 @@ header('location: .././login');
 			?>
 			<tr><div class="col-sm-6">
 				<form class="product-form" style="text-align:center;">
-					<td style="padding: 20px; border: 1px solid;"><h4><?php echo $row["product_name"]; ?></h4></td>
-					<td style="padding: 20px; border: 1px solid;"><div><?php echo $currency; echo $row["product_price"]; ?></div></td>
-                    <td style="padding: 20px; border: 1px solid;"><div><img  class="product_image"  src="./images/<?php echo $row["product_image"]; ?>"></div></td>    
-                    <td style="padding: 20px; border: 1px solid;"><div style="text-align:center;">
+					<td style="padding: 60px; border-bottom: 1px solid;"><h4><?php echo $row["product_name"]; ?></h4></td>
+					<td style="padding: 60px; border-bottom: 1px solid;"><div><?php echo $currency; echo $row["product_price"]; ?></div></td>
+                    <td style="padding-right-left: 60px; border-bottom: 1px solid;"><div><img  class="product_image"  src="./images/<?php echo $row["product_image"]; ?>"></div></td>    
+                    <td style="padding: 60px; border-bottom: 1px solid;"><div style="text-align:center;">
 							Qty :
 							<select name="product_qty">
 							<option value="1">1</option>
@@ -135,12 +129,13 @@ header('location: .././login');
 							</select>
 						</div>
 						<div><input name="product_code" type="hidden" value="<?php echo $row["product_code"]; ?>"></td></div>
-						<div class="col-sm-6"><td style="padding: 20px; border: 1px solid;"><div style="text-align:center;"><button type="submit">Add to Cart</button></div></td>
+						<div class="col-sm-6"><td style="padding: 20px; border-bottom: 1px solid;"><div style="text-align:center;"><button class="btn btn-info" type="submit" onClick="window.location.reload();">Add to Cart</button></div></td>
 					</div>
 				</form>
 			<?php } ?>
 			</tr>
 			</table>
+      </center>
                         </div>
                         </div>
 						</section>

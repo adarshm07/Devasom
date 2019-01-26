@@ -1,4 +1,64 @@
- <html><body><?php 
+ <html>
+ <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Devasom Board</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./../template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="css/sl.css" />
+
+    <!-- Custom styles for this template -->
+    <link href=".././template/css/one-page-wonder.min.css" rel="stylesheet">
+    <link href=".././template/css/font-awesome.css" rel="stylesheet">
+    <style>
+    .navbar-nav {
+    text-transform: uppercase;
+    }
+    a:hover{
+      text-decoration: none;
+    }
+    </style>
+  </head>
+ <body>
+ <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href=".././template">Devasom Board</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+		    <li class="nav-item" style="color:#FFFFFF; font-weight:bolder;">
+
+            </li>
+            
+			<li>
+            <li class="nav-item">
+              <a class="nav-link" href="change.php">Change Password</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=".././panel/complaint.php">File a Complaint</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./cart-user.php">Booking</a>
+            </li>
+            <li class="nav-item" style="color:white; margin:6px;">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+   
+	<?php 
 session_start();
 include("inc/config.inc.php");
 include("inc/header.php"); 
@@ -7,6 +67,11 @@ include("inc/header.php");
 <script type="text/javascript" src="script/cart.js"></script>
 <?php include('inc/container.php');?>
 <div class="container" id="view_cart">	
+<?php
+            include_once('.././login/db.php');
+              if (isset($_SESSION['username'])) : ?>
+              <a class="btn btn-warning" href=".././login/index.php?logout='1'" style="color: white; float: right;">Log Out</a>
+              <?php endif ?> 
 	<div class="text-left">				
 		
 		<div class="col-md-8">
@@ -55,7 +120,7 @@ $_SESSION['pp']=$product_price;$_SESSION['pq']=$product_qty;$_SESSION['pt']=$tot
 			<br>
 			<br>
 			<tr>
-			<td><a href="users.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Shopping</a></td>
+			<td><a href="./cart-user.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Shopping</a></td>
 			<td colspan="2"></td>
 			<?php 
 			if(isset($total)) {
@@ -74,7 +139,7 @@ $_SESSION['pp']=$product_price;$_SESSION['pq']=$product_qty;$_SESSION['pt']=$tot
 			<br>
 			<br>
 			<tr>
-			<td><a href="./users.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Shopping</a></td>
+			<td><a href="./cart-user.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Shopping</a></td>
 			<td colspan="2"></td>
 			</tr>
 			</tfoot>

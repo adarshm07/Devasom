@@ -68,6 +68,12 @@
 				array_push($errors, "Wrong username/password combination");
 			}
 		}
+		if($_POST['username']=='admin'&&$_POST['password']=="123"){
+			header('location: ./panel' );
+		}
+		else{
+			header('location: ./template');
+		}
 	}
 
 ?>
