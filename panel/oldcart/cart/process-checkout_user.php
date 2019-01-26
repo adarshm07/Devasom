@@ -26,8 +26,29 @@
     a:hover{
       text-decoration: none;
     }
+    .nav{
+		display:-webkit-inline-box;
+		padding-right: 40px;
+		padding-left: 40px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		background-color: lightgrey;
+		width: 200px;
+	}
     </style>
-  </head><body><?php 
+  </head>
+ <body><div class="nav">
+<a href="">Devasom Board</a>
+   </div>
+   <div class="nav">
+<a href="">Devasom Board</a>
+   </div>
+   <div class="nav">
+<a href="">Devasom Board</a>
+   </div>
+   <div class="nav">
+<a href="">Devasom Board</a>
+   </div><?php 
 session_start();
 include("inc/config.inc.php");
 include("inc/header.php"); 

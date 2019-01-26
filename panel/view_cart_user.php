@@ -26,38 +26,29 @@
     a:hover{
       text-decoration: none;
     }
+	.nav{
+		display:-webkit-inline-box;
+		padding-right: 40px;
+		padding-left: 40px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		background-color: lightgrey;
+		width: 200px;
+	}
     </style>
   </head>
- <body>
- <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href=".././template">Devasom Board</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-		    <li class="nav-item" style="color:#FFFFFF; font-weight:bolder;">
-
-            </li>
-            
-			<li>
-            <li class="nav-item">
-              <a class="nav-link" href="change.php">Change Password</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href=".././panel/complaint.php">File a Complaint</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./cart-user.php">Booking</a>
-            </li>
-            <li class="nav-item" style="color:white; margin:6px;">
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-   
+ <body><div class="nav">
+<a href="">Devasom Board</a>
+   </div>
+   <div class="nav">
+<a href="">Devasom Board</a>
+   </div>
+   <div class="nav">
+<a href="">Devasom Board</a>
+   </div>
+   <div class="nav">
+<a href="">Devasom Board</a>
+   </div>
 	<?php 
 session_start();
 include("inc/config.inc.php");
