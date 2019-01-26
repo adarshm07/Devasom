@@ -1,126 +1,116 @@
 <?php
 session_start();
+
+$a=$_SESSION['username'];
+
+if($a=="")
+{
+header('location: .././login');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>User</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href=".././vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href=".././vendors/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href=".././vendors/css/vendor.bundle.addons.css">
-  <!-- endinject -->
-  <!-- plugin css for this page -->
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href=".././css/style.css">
-  <!-- endinject -->
-  <link rel="shortcut icon" href=".././images/favicon.png" />
-</head>
-  <link rel="stylesheet" href=".././vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href=".././vendors/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href=".././vendors/css/vendor.bundle.addons.css">
-<body>
-  <div class="container-scroller">
-    <!-- partial:partials/_navbar.html -->
-    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-       
-        <h1 style="color:#0095DD; font-weight:bolder;">Devasom  Board</h1>
-     
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center">
-        <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
-          <li class="nav-item">
-         
-          </li>
-          <li class="nav-item">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Devasom Board</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="css/sl.css" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/one-page-wonder.min.css" rel="stylesheet">
+    <style>
+    .navbar-nav {
+    text-transform: uppercase;
+    background-color: black;
+    }
+    .fixed-top {
+    background-color: black;
+}
+    .btn:hover{
+      background-color: blue;
+    }
+    a{
+      color: white;
+    }
+    a:hover{
+      text-decoration: none;
+      color: white;
+    }
+    html {
+  scroll-behavior: smooth;
+}
+    </style>
+
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="./">Devasom Board</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+		    <li class="nav-item" style="color:#FFFFFF; font-weight:bolder;">
+
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="change.php">Change Password</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=".././panel/complaint.php">File a Complaint</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=".././panel/cart-user.php">Booking</a>
+            </li>
+            <li class="nav-item" style="color:white; margin:6px;">
+            <?php
+            $a=$_SESSION['username'];
+            echo $a;?>
+            </li>
+            <li class="nav-item">
             <?php
             include_once('.././login/db.php');
               if (isset($_SESSION['username'])) : ?>
               <a class="nav-link" href=".././login/index.php?logout='1'" style="color: red;">Log Out</a>
-              <?php endif ?>
+              <?php endif ?> 
             </li>
-        <ul class="navbar-nav navbar-nav-right">
-          
-          <li class="nav-item">
-            <?php
-            $a=$_SESSION['username'];
-            echo $a;?> 
-            </a>
-          </li>
-        </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="mdi mdi-menu"></span>
-        </button>
+          </ul>
+        </div>
       </div>
     </nav>
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-          <li class="nav-item nav-profile">
-            <div class="nav-link">
-              <div class="user-wrapper">
-               
-                <div class="text-wrapper">
-                  <p class="profile-name"></p>
-              
-                </div>
-              </div>
-           
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./users.php">
-              <i class="menu-icon mdi mdi-television"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-  <li class="nav-item">
-            <a class="nav-link" href="change.php">
-              <i class="menu-icon mdi mdi-user"></i>
-              <span class="menu-title">Change Password</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="complaint.php">
-              <i class="menu-icon mdi mdi-user"></i>
-              <span class="menu-title">File a Complaint</span>
-            </a>
-          </li>
-       
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="pages/samples/login.html"> Login </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="pages/samples/register.html"> Register </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="pages/samples/error-404.html"> 404 </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="pages/samples/error-500.html"> 500 </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    <div class="container" style="margin: 20px;">
+    <header class="masthead text-center text-white" style="background-color: lightgrey; background-repeat:no-repeat; height:600px;">
+      <div class="masthead-content" >
+        <div class="container" style="color:#6666FF;">
+          <h2 class="masthead-heading mb-0" style="color: white; text-align: left; font-size: 50px; padding-top: 200px;">Welcome to Sabarimala Devasom</h2>
+          <h4 class="masthead-subheading mb-0" style="color: white; text-align: left; font-size: 24px;">Thrivanathapuram</h4>
+          <br>
+          <br>
+          <br>
+          <br>
+   <button class="btn-lg btn-info"><a href="#more">File a Complaint</a></button>
+        </div>
+      </div>
+  
+    </header>
+    <div style="background-color: #031a31; width: 100%;">
+    <div class="container" style="background-color: blue;">
     <div class="jumbotron" style="margin-bottom: 2rem;
     background-color: #031a31;
-    border-radius: 0.3rem;
     width: 50%;
     margin-left: 220px;">
     <?php
@@ -174,10 +164,12 @@ mysqli_close($connection);
                 echo "</select><br>";
                 mysqli_close($conn);
             ?>
+            <div id="more">
             <input type="text" name="subject" class="form-control margin-bottom-10 error-msg" placeholder="Subject"><br>
             <textarea rows="5" cols="25" placeholder="Complaint" class="form-control margin-bottom-10 error-msg" name="description"></textarea><br>
             <br>
             <input class="btn btn-success" style="float: right;" type="submit" name="submit" value="Submit" />
+            </div>
 </div>
 </div>
 </form>
