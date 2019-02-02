@@ -93,8 +93,8 @@ header('location: .././login');
         </div>
       </div>
     </nav>
-    <div style="background-color: #031a31; width: 100%;">
-    <div class="container" style="background-color: blue;">
+    <div style="background-color: white; width: 100%; margin: 60px;">
+    <div class="container" style="background-color: white;">
     <div class="jumbotron" style="margin-bottom: 2rem;
     background-color: #031a31;
     width: 50%;
