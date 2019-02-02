@@ -138,7 +138,7 @@ include("inc/config.inc.php");
 							</select>
 						</div>					
 						<input name="product_code" type="hidden" value="<?php echo $row["product_code"]; ?>">
-						<div style="text-align:center;"><button type="submit">Add to Cart</button></div>
+						<div style="text-align:center;"><button type="submit" onClick="window.location.reload()">Add to Cart</button></div>
 					</div>
 				</form>
 				</li>
