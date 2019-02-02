@@ -94,16 +94,21 @@ session_start();
 <li class="nav-item">
             <a class="nav-link" href="./complaint/view_complaint.php">
               <i class="menu-icon mdi mdi-user"></i>
-              <span class="menu-title">View Complaint</span>
+              <span class="menu-title">View Feedback</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./admin.php">
+            <a class="nav-link" href="./products.php">
               <i class="menu-icon mdi mdi-user"></i>
               <span class="menu-title">Booking Details</span>
             </a>
           </li>
-       
+          <li class="nav-item">
+            <a class="nav-link" href="./change.php">
+              <i class="menu-icon mdi mdi-user"></i>
+              <span class="menu-title">Change Password</span>
+            </a>
+          </li>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">

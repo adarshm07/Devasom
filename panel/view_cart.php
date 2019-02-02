@@ -55,7 +55,7 @@ $_SESSION['pp']=$product_price;$_SESSION['pq']=$product_qty;$_SESSION['pt']=$tot
 			<br>
 			<br>
 			<tr>
-			<td><a href="admin.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Shopping</a></td>
+			<td><a href="products.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Shopping</a></td>
 			<td colspan="2"></td>
 			<?php 
 			if(isset($total)) {
@@ -74,7 +74,7 @@ $_SESSION['pp']=$product_price;$_SESSION['pq']=$product_qty;$_SESSION['pt']=$tot
 			<br>
 			<br>
 			<tr>
-			<td><a href="admin.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Shopping</a></td>
+			<td><a href="products.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Shopping</a></td>
 			<td colspan="2"></td>
 			</tr>
 			</tfoot>

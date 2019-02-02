@@ -93,20 +93,6 @@ header('location: .././login');
         </div>
       </div>
     </nav>
-    <header class="masthead text-center text-white" style="background-color: lightgrey; background-repeat:no-repeat; height:600px;">
-      <div class="masthead-content" >
-        <div class="container" style="color:#6666FF;">
-          <h2 class="masthead-heading mb-0" style="color: white; text-align: left; font-size: 50px; padding-top: 200px;">Welcome to Sabarimala Devasom</h2>
-          <h4 class="masthead-subheading mb-0" style="color: white; text-align: left; font-size: 24px;">Thrivanathapuram</h4>
-          <br>
-          <br>
-          <br>
-          <br>
-   <button class="btn-lg btn-info"><a href="#more">File a Complaint</a></button>
-        </div>
-      </div>
-  
-    </header>
     <div style="background-color: #031a31; width: 100%;">
     <div class="container" style="background-color: blue;">
     <div class="jumbotron" style="margin-bottom: 2rem;

@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Devasom Board: Pooja Booking</title>
+<title>Devasom Board</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content=" Bakery In Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -16,6 +16,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 		
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" /><!-- bootstrap css -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="css/gallery.css" rel="stylesheet" type="text/css" media="all" /><!-- gallery css -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 
@@ -26,7 +27,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
 <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
 <!--//fonts-->
-
+<style>
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,.5);
+    color: black;
+}
+</style>
 </head>
 <body>
 <?php 
@@ -37,63 +43,88 @@ include("inc/config.inc.php");
 ?><link href="style/style.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript" src="script/cart.js"></script>
-<div class="container-scroller">
-    <!-- partial:partials/_navbar.html -->
-    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-       
-        <h1 style="color:#0095DD; font-weight:bolder;">Devasom Board</h1>
-     
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center">
-        <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
-          <li class="nav-item">
+
 	<!-- header -->
-	<div class="header">
-								<li><a href="view_cart.php"  id="cart-info" title="View Cart">  <span class="glyphicon glyphicon-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span><?php 
+	<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="./">Devasom Board</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+		    <li class="nav-item" style="color:#FFFFFF; font-weight:bolder;">
+
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="change.php">Change Password</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=".././panel/products.php">Booking</a>
+            </li>
+            
+								<li><a href="view_cart.php"  id="cart-info" title="View Cart">  <span class="glyphicon glyphicon-shopping-cart my-cart-icon" style="margin-top:16px;"><span class="badge badge-notify my-cart-badge"></span></span><?php 
 			if(isset($_SESSION["products"])){
 				echo count($_SESSION["products"]); 
 			} else {
 				
 			}
 			?></a></li>
-			<li>
-			<?php
- 
- //mysqli Procedural
- $connection = mysqli_connect("localhost","root","","devasom");
- if (!$connection) {
-   die("Connection failed: " . mysqli_connect_error());
- }
-  
- ?>
-         
-        </ul> <a href="./logout.php" style="color:white;">Logout</a>
-        <ul class="navbar-nav navbar-nav-right">
-							</ul>
-						</nav>
-					</div>
-					<!--/.navbar-collapse-->
-					<!--/.navbar-->
-				</div>
-			</nav>
+			<li style="margin:16px; text-transform: capitalize;">
+            <?php
+            $a=$_SESSION['username'];
+            echo $a;?>
+            </li>
+            <li class="nav-item">
+            <?php
+            include_once('.././login/db.php');
+              if (isset($_SESSION['username'])) : ?>
+              <a class="nav-link" href=".././login/index.php?logout='1'" style="color: red;">Log Out</a>
+              <?php endif ?> 
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 		</div>
 	</div>
 	<!-- //header -->
-	
+
+<!-- innerpages_banner -->
+	<div class="innerpages_banner">
+		<h2>Our Products</h2>
+	</div>
+<!-- //innerpages_banner -->
+
 <!-- Portfolio section -->
 <section class="portfolio-agileinfo gallery" id="portfolio">
+			<h3 class="heading">Products</h3>
 				<div class="container">
+	<div class="gallery-grids">
+		<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+			<ul id="myTab" class="nav nav-tabs" role="tablist" data-aos="zoom-in">
+				<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">All</a></li>
+				<li role="presentation"><a href="#teach" role="tab" id="teach-tab" data-toggle="tab" aria-controls="teach">Cakes</a></li>
+				<li role="presentation"><a href="#train" role="tab" id="train-tab" data-toggle="tab" aria-controls="train">Snacks</a></li>
+				<li role="presentation"><a href="#learn" role="tab" id="learn-tab" data-toggle="tab" aria-controls="learn">Biscuits</a></li>
+				<li role="presentation"><a href="#award" role="tab" id="award-tab" data-toggle="tab" aria-controls="award">Pudding</a></li>
+			</ul>
+			<div id="myTabContent" class="tab-content">
+				<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+					<div class="tab_img">
+						<ul class="products-container">
 						<?php			
 			$sql_query = "SELECT product_name, product_desc, product_code, product_image, product_price FROM shop_products";	
 		    $resultset = mysqli_query($conn, $sql_query) or die("database error:". mysqli_error($conn));
 			while( $row = mysqli_fetch_assoc($resultset) ) {
 			?>
-			<table style="margin: 40px;">
-			<tr><div class="col-sm-6">
+			<li>
 				<form class="product-form" style="text-align:center;">
-					<td><h4><?php echo $row["product_name"]; ?></h4>
+					<h4><?php echo $row["product_name"]; ?></h4>
+					<div><img  class="product_image"  src="images/<?php echo $row["product_image"]; ?>"></div>
 					<div>Price : <?php echo $currency; echo $row["product_price"]; ?></div>
+					<div class="product-box">
 						
 						<div style="text-align:center;">
 							Qty :
@@ -104,16 +135,169 @@ include("inc/config.inc.php");
 							<option value="4">4</option>
 							<option value="5">5</option>
 							</select>
-						</div>
-						<input name="product_code" type="hidden" value="<?php echo $row["product_code"]; ?>"></td></div>
-						<div class="col-sm-6"><td><div style="text-align:center;"><button type="submit">Add to Cart</button></div></td>
+						</div>					
+						<input name="product_code" type="hidden" value="<?php echo $row["product_code"]; ?>">
+						<div style="text-align:center;"><button type="submit">Add to Cart</button></div>
 					</div>
 				</form>
-			<?php } ?>
-			</tr>
-			</table>
-						</div>
-						</section>
+				</li>
+			<?php } ?></ul>
+						
+						
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div role="tabpanel" class="tab-pane fade" id="teach" aria-labelledby="teach-tab">
+				<div class="tab_img">
+						<ul class="products-container">
+						<?php			
+			$sql_query = "SELECT product_name, product_desc, product_code, product_image, product_price FROM shop_products where catagory='cake'";	
+		    $resultset = mysqli_query($conn, $sql_query) or die("database error:". mysqli_error($conn));
+			while( $row = mysqli_fetch_assoc($resultset) ) {
+			?>
+			<li>
+				<form class="product-form">
+					<h4><?php echo $row["product_name"]; ?></h4>
+					<div><img class="product_image" src="images/<?php echo $row["product_image"]; ?>"></div>
+					<div>Price : <?php echo $currency; echo $row["product_price"]; ?></div>
+					<div class="product-box" style="text-align:center;">
+						
+						<div>
+							Qty :
+							<select name="product_qty">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							</select>
+						</div>					
+						<input name="product_code" type="hidden" value="<?php echo $row["product_code"]; ?>">
+						<div style="text-align:center;"><button type="submit">Add to Cart</button></div>
+					</div>
+				</form>
+				</li>
+			<?php } ?></ul>
+						
+						
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div role="tabpanel" class="tab-pane fade" id="train" aria-labelledby="train-tab">
+					<div class="tab_img">
+						<ul class="products-container">
+						<?php			
+			$sql_query = "SELECT product_name, product_desc, product_code, product_image, product_price FROM shop_products where catagory='snackes'";	
+		    $resultset = mysqli_query($conn, $sql_query) or die("database error:". mysqli_error($conn));
+			while( $row = mysqli_fetch_assoc($resultset) ) {
+			?>
+			<li>
+				<form class="product-form">
+					<h4><?php echo $row["product_name"]; ?></h4>
+					<div><img class="product_image" src="images/<?php echo $row["product_image"]; ?>"></div>
+					<div>Price : <?php echo $currency; echo $row["product_price"]; ?></div>
+					<div class="product-box" style="text-align:center;">
+						
+						<div>
+							Qty :
+							<select name="product_qty">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							</select>
+						</div>					
+						<input name="product_code" type="hidden" value="<?php echo $row["product_code"]; ?>">
+						<button type="submit">Add to Cart</button>
+					</div>
+				</form>
+				</li>
+			<?php } ?></ul>
+						
+						
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div role="tabpanel" class="tab-pane fade" id="learn" aria-labelledby="learn-tab">
+					<div class="tab_img">
+						<ul class="products-container">
+						<?php			
+			$sql_query = "SELECT product_name, product_desc, product_code, product_image, product_price FROM shop_products where catagory='biscuits'";	
+		    $resultset = mysqli_query($conn, $sql_query) or die("database error:". mysqli_error($conn));
+			while( $row = mysqli_fetch_assoc($resultset) ) {
+			?>
+			<li>
+				<form class="product-form">
+					<h4><?php echo $row["product_name"]; ?></h4>
+					<div><img class="product_image" src="images/<?php echo $row["product_image"]; ?>"></div>
+					<div>Price : <?php echo $currency; echo $row["product_price"]; ?></div>
+					<div class="product-box" style="text-align:center;">
+						
+						<div>
+							Qty :
+							<select name="product_qty">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							</select>
+						</div>					
+						<input name="product_code" type="hidden" value="<?php echo $row["product_code"]; ?>">
+						<button type="submit">Add to Cart</button>
+					</div>
+				</form>
+				</li>
+			<?php } ?></ul>
+						
+						
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div role="tabpanel" class="tab-pane fade" id="award" aria-labelledby="award-tab">
+				<div class="tab_img">
+						<ul class="products-container">
+						<?php			
+			$sql_query = "SELECT product_name, product_desc, product_code, product_image, product_price FROM shop_products  where catagory='pudding'";	
+		    $resultset = mysqli_query($conn, $sql_query) or die("database error:". mysqli_error($conn));
+			while( $row = mysqli_fetch_assoc($resultset) ) {
+			?>
+			<li>
+				<form class="product-form">
+					<h4><?php echo $row["product_name"]; ?></h4>
+					<div><img class="product_image" src="images/<?php echo $row["product_image"]; ?>"></div>
+					<div>Price : <?php echo $currency; echo $row["product_price"]; ?></div>
+					<div class="product-box" style="text-align:center;">
+						
+						<div>
+							Qty :
+							<select name="product_qty">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							</select>
+						</div>					
+						<input name="product_code" type="hidden" value="<?php echo $row["product_code"]; ?>">
+						<button type="submit">Add to Cart</button>
+					</div>
+				</form>
+				</li>
+			<?php } ?></ul>
+						
+						
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+	</div>	
+</section>
+<!-- /Portfolio section -->	
+
 <!-- subscribe -->
 <div class="subscribe">
 	<div class="container">
