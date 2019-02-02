@@ -11,6 +11,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 		
 		<link rel="stylesheet" href=".././vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link href=".././vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href=".././vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href=".././vendors/css/vendor.bundle.addons.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -23,70 +24,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <link rel="stylesheet" href=".././css/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href=".././images/favicon.png" />
+  <style>
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,.5);
+    color: white;
+}
+.navbar{
+  background-color: #252424;
+}
+</style>
 </head>
 <body>
+<?php 
+session_start();
+include_once("inc/db_connect.php");
+include("inc/config.inc.php"); 
+
+?>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
-    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-       
-        <h1 style="color:#0095DD; font-weight:bolder;">Devasom Board</h1>
-     
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center">
-        <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
-          <li class="nav-item">
-         
-          </li>
-          <?php
- 
- //mysqli Procedural
- $conn = mysqli_connect("localhost","root","","devasom");
- if (!$conn) {
-   die("Connection failed: " . mysqli_connect_error());
- }
-  
- ?>
-         
-        </ul>
-
-          <li class="nav-item dropdown d-none d-xl-inline-block">
-              <span class="profile-text">Hello, Admin!</span>
-            
-              <a href=".././login/index.php?logout='1'" style="color: white;">Log Out</a>
-            </div>
-            </li>
-        </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="mdi mdi-menu"></span>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href=".././index.php">Devasom Board</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-      </div>
-    </nav>
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-          <li class="nav-item nav-profile">
-            <div class="nav-link">
-              <div class="user-wrapper">
-               
-                <div class="text-wrapper">
-                  <p class="profile-name"></p>
-              
-                </div>
-              </div>
-           
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./index.php">
-              <i class="menu-icon mdi mdi-television"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-<li class="nav-item">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+		    <li class="nav-item" style="color:#FFFFFF; font-weight:bolder;">
+
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="change.php">Change Password</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=".././panel/products.php">Booking</a>
+            </li>
             <a class="nav-link" href="./product/stock.php">
+            <li class="nav-item">
               <i class="menu-icon mdi mdi-user"></i>
               <span class="menu-title">Add Products</span>
             </a>
@@ -97,13 +72,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <span class="menu-title">View Complaint</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./admin.php">
-              <i class="menu-icon mdi mdi-user"></i>
-              <span class="menu-title">Booking Details</span>
-            </a>
-          </li>
-       
+								<li><a href="view_cart.php"  id="cart-info" title="View Cart">  <span class="glyphicon glyphicon-shopping-cart my-cart-icon" style="margin-top:16px;"><span class="badge badge-notify my-cart-badge"></span></span><?php 
+			if(isset($_SESSION["products"])){
+				echo count($_SESSION["products"]); 
+			} else {
+				
+			}
+			?></a></li>
+			<li style="margin:16px; text-transform: capitalize; color: white;">
+            <?php
+            $a=$_SESSION['username'];
+            echo $a;?>
+            </li>
+            <li class="nav-item">
+            <?php
+            include_once('../.././login/db.php');
+              if (isset($_SESSION['username'])) : ?>
+              <a class="nav-link" href=".././login/index.php?logout='1'" style="color: red;">Log Out</a>
+              <?php endif ?> 
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
@@ -128,7 +120,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       </nav>
 
 	<!-- banner slider --><div style="padding-left:100px;">
-	<h1>Add Stock Details</h1>
+	<h1>Add Details</h1>
 	<form method="post" enctype="multipart/form-data" action="./stock.php">
 	Product Name:<input type="text" name="pn" />
 	<br /><br />

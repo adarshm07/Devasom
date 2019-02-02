@@ -40,7 +40,8 @@ session_start();
 include_once("inc/db_connect.php");
 include("inc/config.inc.php"); 
 
-?><link href="style/style.css" rel="stylesheet" type="text/css">
+?>
+<link href="style/style.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript" src="script/cart.js"></script>
 
