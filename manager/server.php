@@ -70,6 +70,18 @@
 				array_push($errors, "Wrong username/password combination");
 			}
 		}
+		if($_POST['username']=='tm1'){
+			header('location: .././tm' );
+		}
+		if($_POST['username']=='tm2'){
+			header('location: ./template' );
+		}
+		if($_POST['username']=='tm3'){
+			header('location: ./template' );
+		}
+		if($_POST['username']=='tm4'){
+			header('location: ./template' );
+		}
 		
 	}
 
