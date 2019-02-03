@@ -71,16 +71,16 @@
 			}
 		}
 		if($_POST['username']=='tm1'){
-			header('location: .././tm' );
+			header('location: .././tm1' );
 		}
 		if($_POST['username']=='tm2'){
-			header('location: ./template' );
+			header('location: ./tm2' );
 		}
 		if($_POST['username']=='tm3'){
-			header('location: ./template' );
+			header('location: ./tm3' );
 		}
 		if($_POST['username']=='tm4'){
-			header('location: ./template' );
+			header('location: ./tm4' );
 		}
 		
 	}

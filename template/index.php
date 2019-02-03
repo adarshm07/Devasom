@@ -76,7 +76,7 @@ header('location: .././login');
             <?php
             include_once('.././login/db.php');
               if (isset($_SESSION['username'])) : ?>
-              <a class="nav-link" href=".././login/index.php?logout='1'" style="color: red;">Log Out</a>
+              <a class="nav-link" href="./logout.php?logout='1'" style="color: red;">Log Out</a>
               <?php endif ?> 
             </li>
           </ul>
