@@ -100,7 +100,7 @@ session_start();
           <li class="nav-item">
             <a class="nav-link" href="./products.php">
               <i class="menu-icon mdi mdi-user"></i>
-              <span class="menu-title">Booking Details</span>
+              <span class="menu-title">Pooja Booking</span>
             </a>
           </li>
           <li class="nav-item">
