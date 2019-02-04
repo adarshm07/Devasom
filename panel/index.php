@@ -53,7 +53,7 @@ session_start();
           <li class="nav-item dropdown d-none d-xl-inline-block">
               <span class="profile-text">Hello, Admin!</span>
             
-              <a href=".././login/index.php?logout='1'" style="color: white;">Log Out</a>
+              <a href=".././index.php?logout='1'" style="color: white;">Log Out</a>
             </div>
             </li>
         </ul>
