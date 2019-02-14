@@ -59,7 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li><a href="about.html">About </a></li>
 								<li><a href="services.html">Services</a></li>
 								
-								<li><a href="products.php">Products</a></li>
+								<li><a href="products.php">Poojas</a></li>
 								<li>Logged as: <?php echo $logged; ?>
 				</a>
 				
@@ -558,7 +558,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"> </div>
 			</div>
 			<div class="agileinfo_copyright">
-				<p>© 2018 Bakery In. All Rights Reserved | Design by <a href="https://w3layouts.com/">W3layouts</a>
+				<p>ï¿½ 2018 Bakery In. All Rights Reserved | Design by <a href="https://w3layouts.com/">W3layouts</a>
 				</p>
 			</div>
 		</div>

@@ -39,13 +39,13 @@
           <div id="navigation" class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
               <li class="active"><a href="index.html">Home</a></li>
-              <li><a href="./about.php">About</a></li>
-              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Timings<b class="caret"></b></a>
+              <li><a href="text.html">About</a></li>
+              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Dropdown <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Travelling time</a></li>
-                  <li><a href="#">Pooja timings</a></li>
-                  <li><a href="#">Vazhipad timings</a></li>
-                  <li><a href="#">Festivals timingS</a></li>
+                  <li><a href="#">Dropdown item 1</a></li>
+                  <li><a href="#">Dropdown item 2</a></li>
+                  <li><a href="#">Dropdown item 3</a></li>
+                  <li><a href="#">Dropdown item 4</a></li>
                 </ul>
               </li>
               <li><a href="contact.html">Contact</a></li>

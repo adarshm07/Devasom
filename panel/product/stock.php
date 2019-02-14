@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Devasom Board</title>
+<title>Nalambala Darshanam</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Bakery In Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -45,7 +45,7 @@ include("inc/config.inc.php");
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
       <div class="container">
-        <a class="navbar-brand" href=".././index.php">Devasom Board</a>
+        <a class="navbar-brand" href=".././index.php">Nalambala Darshanam</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -69,7 +69,7 @@ include("inc/config.inc.php");
 <li class="nav-item">
             <a class="nav-link" href="./complaint/view_complaint.php">
               <i class="menu-icon mdi mdi-user"></i>
-              <span class="menu-title">View Complaint</span>
+              <span class="menu-title">View feedback</span>
             </a>
           </li>
 								<li><a href="view_cart.php"  id="cart-info" title="View Cart">  <span class="glyphicon glyphicon-shopping-cart my-cart-icon" style="margin-top:16px;"><span class="badge badge-notify my-cart-badge"></span></span><?php 
@@ -81,8 +81,8 @@ include("inc/config.inc.php");
 			?></a></li>
 			<li style="margin:16px; text-transform: capitalize; color: white;">
             <?php
-            $a=$_SESSION['username'];
-            echo $a;?>
+            //$a=$_SESSION['name'];
+            //echo $a;?>
             </li>
             <li class="nav-item">
             <?php
@@ -122,19 +122,17 @@ include("inc/config.inc.php");
 	<!-- banner slider --><div style="padding-left:100px;">
 	<h1>Add Details</h1>
 	<form method="post" enctype="multipart/form-data" action="./stock.php">
-	Product Name:<input type="text" name="pn" />
+	Pooja Name:<input type="text" name="pn" />
 	<br /><br />
-	Product Description:<input type="text" name="pd" />
+	Pooja Description:<input type="text" name="pd" />
 	<br /><br />
-	Product Code:<input type="text" name="pc" />
+	Pooja Code:<input type="text" name="pc" />
 	<br /><br />
-	Product Image:<input type="file" name="upload" accept="image/*" />
+	Pooja Image:<input type="file" name="upload" accept="image/*" />
 	<br /><br />
-	Product Price:<input type="text" name="pp" />
+	Pooja Price:<input type="text" name="pp" />
 	<br /><br />
-	ProductQuantity:<input type="text" name="pq" />
-	<br /><br />
-		Product catagory:<select name="pcy"><option>cake</option><option>snackes</option><option>biscuits</option><option>pudding</option></select>
+		Pooja catagory:<select name="pcy"><option>Meenuttu</option><option>Vedi</option><option>Tharamala</option><option>Brinjal nivedyam</option></select>
 	<br /><br />
 	<input type="submit" name="add" value="ADD"/>
 	<br /><br />

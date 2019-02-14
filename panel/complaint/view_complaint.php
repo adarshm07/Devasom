@@ -27,7 +27,7 @@
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
        
-        <h1 style="color:#0095DD; font-weight:bolder;">Devasom Board</h1>
+        <h1 style="color:#0095DD; font-weight:bolder;">Nalambala Darshanam</h1>
      
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
@@ -119,13 +119,13 @@
 <li class="nav-item">
             <a class="nav-link" href="./product/stock.php">
               <i class="menu-icon mdi mdi-user"></i>
-              <span class="menu-title">Add Products</span>
+              <span class="menu-title">Add Poojas</span>
             </a>
           </li>
 <li class="nav-item">
             <a class="nav-link" href="view_complaint.php">
               <i class="menu-icon mdi mdi-user"></i>
-              <span class="menu-title">View Complaint</span>
+              <span class="menu-title">View feedback</span>
             </a>
           </li>
           <li class="nav-item">
@@ -160,7 +160,7 @@
 <div class="container">
 	<div style="height:50px;"></div>
 	<div class="well" style="margin:auto; padding:auto; width:80%;">
-	<span style="font-size:25px; color:blue"><center><strong>Complaint</strong></center></span>	
+	<span style="font-size:25px; color:blue"><center><strong>Feedback</strong></center></span>	
 		<div style="height:50px;"></div>
 		<table class="table table-striped table-bordered table-hover gridtable" style="table-layout:fixed;" id="Select-b">
 			<thead>
@@ -168,7 +168,7 @@
 				<th>Number</th>
 				<th>Category</th>
                 <th>Subject</th>
-                <th>Complaint</th>
+                <th>Feedback</th>
                 <th>Action</th>
 			</thead>
 			<tbody>

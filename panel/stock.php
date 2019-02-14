@@ -35,7 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<span class="icon-bar"></span>
 				</button>
 						<a class="navbar-brand" href="index.html">
-							<h1>Bakery In</h1>
+							<h1>poojas In</h1>
 						</a>
 					</div>
 					<!--/.navbar-header-->

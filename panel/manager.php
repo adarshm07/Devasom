@@ -23,6 +23,12 @@ session_start();
   <link rel="stylesheet" href=".././css/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href=".././images/favicon.png" />
+
+  <style>
+  .h1, h1 {
+    font-size: 25px;
+}
+</style>
 </head>
 <body>
   <div class="container-scroller">
@@ -30,7 +36,7 @@ session_start();
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
        
-        <h1 style="color:#0095DD; font-weight:bolder;">Devasom Board</h1>
+        <h1 style="color:#0095DD; font-weight:bolder";> Nalambala Darshanam</h1>
      
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
@@ -51,7 +57,7 @@ session_start();
         </ul>
 
           <li class="nav-item dropdown d-none d-xl-inline-block">
-              <span class="profile-text">Hello!</span>
+              <span class="profile-text">Hello, Admin!</span>
             
               <a href=".././login/index.php?logout='1'" style="color: white;">Log Out</a>
             </div>
@@ -85,16 +91,16 @@ session_start();
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./manager.php">
-              <i class="menu-icon mdi mdi-user"></i>
-              <span class="menu-title">Manager</span>
-            </a>
-          </li>
 <li class="nav-item">
             <a class="nav-link" href="./product/stock.php">
               <i class="menu-icon mdi mdi-user"></i>
-              <span class="menu-title">Add Products</span>
+              <span class="menu-title">Add Poojas and Vazhipads</span>
+            </a>
+          </li>
+<li class="nav-item">
+            <a class="nav-link" href="./complaint/view_complaint.php">
+              <i class="menu-icon mdi mdi-user"></i>
+              <span class="menu-title">View Feedback</span>
             </a>
           </li>
           <li class="nav-item">
@@ -107,12 +113,6 @@ session_start();
             <a class="nav-link" href="./change.php">
               <i class="menu-icon mdi mdi-user"></i>
               <span class="menu-title">Change Password</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./editproduct.php">
-              <i class="menu-icon mdi mdi-user"></i>
-              <span class="menu-title">Edit Products</span>
             </a>
           </li>
             <div class="collapse" id="auth">
@@ -146,22 +146,22 @@ session_start();
 		<div style="height:50px;"></div>
 		<table class="table table-striped table-bordered table-hover">
 			<thead>
-				<th>Temple</th>
 				<th>Username</th>
-				<th>Password</th>
+				<th>Name</th>
+				<th>Address</th>
 				<th>Action</th>
 			</thead>
 			<tbody>
 			<?php
-				include('./conn.php');
+				include('conn.php');
 				
-				$query=mysqli_query($conn,"select * from `manager`");
+				$query=mysqli_query($conn,"select * from `register`");
 				while($row=mysqli_fetch_array($query)){
 					?>
 					<tr>
-						<td><?php echo $row['userrole']; ?></td>
-						<td><?php echo $row['username']; ?></td>
-						<td><?php echo $row['password']; ?></td>
+						<td><?php echo $row['uname']; ?></td>
+						<td><?php echo $row['name']; ?></td>
+						<td><?php echo $row['email']; ?></td>
 						<td>
 							<a href="#edit<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit</a> || 
 							<a href="#del<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>

@@ -62,7 +62,7 @@ header('location: .././login');
               <a class="nav-link" href="change.php">Change Password</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href=".././panel/complaint.php">File a Complaint</a>
+              <a class="nav-link" href=".././panel/complaint.php" Add feedback</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href=".././panel/cart-user.php">Booking</a>
@@ -87,8 +87,8 @@ header('location: .././login');
     <header class="masthead text-center text-white" style="background-image:url(image/img2.jpg); background-repeat:no-repeat; height:600px;">
       <div class="masthead-content" >
         <div class="container" style="color:#6666FF;">
-          <h2 class="masthead-heading mb-0" style="color: white; text-align: left; font-size: 50px;">Welcome to Sabarimala Devasom</h2>
-          <h4 class="masthead-subheading mb-0" style="color: white; text-align: left; font-size: 24px;">Thrivanathapuram</h4>
+          <h2 class="masthead-heading mb-0" style="color: white; text-align: left; font-size: 50px;">Welcome to nalambalam</h2>
+          <h4 class="masthead-subheading mb-0" style="color: white; text-align: left; font-size: 24px;">Thrissur</h4>
           <br>
           <br>
           <br>

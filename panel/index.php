@@ -23,6 +23,12 @@ session_start();
   <link rel="stylesheet" href=".././css/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href=".././images/favicon.png" />
+
+  <style>
+  .h1, h1 {
+    font-size: 25px;
+}
+</style>
 </head>
 <body>
   <div class="container-scroller">
@@ -30,7 +36,7 @@ session_start();
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
        
-        <h1 style="color:#0095DD; font-weight:bolder;">Devasom Board</h1>
+        <h1 style="color:#0095DD; font-weight:bolder";> Nalambala Darshanam</h1>
      
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
@@ -53,7 +59,7 @@ session_start();
           <li class="nav-item dropdown d-none d-xl-inline-block">
               <span class="profile-text">Hello, Admin!</span>
             
-              <a href=".././index.php?logout='1'" style="color: white;">Log Out</a>
+              <a href=".././login/index.php?logout='1'" style="color: white;">Log Out</a>
             </div>
             </li>
         </ul>
@@ -88,7 +94,7 @@ session_start();
 <li class="nav-item">
             <a class="nav-link" href="./product/stock.php">
               <i class="menu-icon mdi mdi-user"></i>
-              <span class="menu-title">Add Products</span>
+              <span class="menu-title">Add Poojas and Vazhipads</span>
             </a>
           </li>
 <li class="nav-item">
@@ -100,7 +106,7 @@ session_start();
           <li class="nav-item">
             <a class="nav-link" href="./products.php">
               <i class="menu-icon mdi mdi-user"></i>
-              <span class="menu-title">Pooja Booking</span>
+              <span class="menu-title">Booking Details</span>
             </a>
           </li>
           <li class="nav-item">
@@ -140,8 +146,8 @@ session_start();
 		<div style="height:50px;"></div>
 		<table class="table table-striped table-bordered table-hover">
 			<thead>
-				<th>Firstname</th>
-				<th>Lastname</th>
+				<th>Username</th>
+				<th>Name</th>
 				<th>Address</th>
 				<th>Action</th>
 			</thead>

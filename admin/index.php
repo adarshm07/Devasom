@@ -20,7 +20,7 @@
 </head>
 <body>
 	<div class="header">
-		<h2>Devasom Board</h2>
+		<h2>Nalambala Darshanam</h2>
 	</div>
 	<div class="content">
 

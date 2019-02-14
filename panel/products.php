@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Devasom Board</title>
+<title>Nalambala Darshanam</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content=" Bakery In Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -49,7 +49,7 @@ include("inc/config.inc.php");
 	<!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="./">Devasom Board</a>
+        <a class="navbar-brand" href="./">Nalambala Darshanam</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -94,22 +94,22 @@ include("inc/config.inc.php");
 
 <!-- innerpages_banner -->
 	<div class="innerpages_banner">
-		<h2>Our Products</h2>
+		<h2>Our Poojas</h2>
 	</div>
 <!-- //innerpages_banner -->
 
 <!-- Portfolio section -->
 <section class="portfolio-agileinfo gallery" id="portfolio">
-			<h3 class="heading">Products</h3>
+			<h3 class="heading">Poojas</h3>
 				<div class="container">
 	<div class="gallery-grids">
 		<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 			<ul id="myTab" class="nav nav-tabs" role="tablist" data-aos="zoom-in">
 				<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">All</a></li>
-				<li role="presentation"><a href="#teach" role="tab" id="teach-tab" data-toggle="tab" aria-controls="teach">Cakes</a></li>
-				<li role="presentation"><a href="#train" role="tab" id="train-tab" data-toggle="tab" aria-controls="train">Snacks</a></li>
-				<li role="presentation"><a href="#learn" role="tab" id="learn-tab" data-toggle="tab" aria-controls="learn">Biscuits</a></li>
-				<li role="presentation"><a href="#award" role="tab" id="award-tab" data-toggle="tab" aria-controls="award">Pudding</a></li>
+				<li role="presentation"><a href="#teach" role="tab" id="teach-tab" data-toggle="tab" aria-controls="teach">Meenuttu</a></li>
+				<li role="presentation"><a href="#train" role="tab" id="train-tab" data-toggle="tab" aria-controls="train">Vedi</a></li>
+				<li role="presentation"><a href="#learn" role="tab" id="learn-tab" data-toggle="tab" aria-controls="learn">Tharamala</a></li>
+				<li role="presentation"><a href="#award" role="tab" id="award-tab" data-toggle="tab" aria-controls="award">Brijal Nivedyam</a></li>
 			</ul>
 			<div id="myTabContent" class="tab-content">
 				<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">

@@ -86,7 +86,7 @@ session_start();
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./products.php">
+            <a class="nav-link" href="./index.php">
               <i class="menu-icon mdi mdi-television"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -100,13 +100,19 @@ session_start();
           <li class="nav-item">
             <a class="nav-link" href="./products.php">
               <i class="menu-icon mdi mdi-user"></i>
-              <span class="menu-title">Pooja Booking</span>
+              <span class="menu-title">Booking Details</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./change.php">
               <i class="menu-icon mdi mdi-user"></i>
               <span class="menu-title">Change Password</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./editproduct.php">
+              <i class="menu-icon mdi mdi-user"></i>
+              <span class="menu-title">Edit Products</span>
             </a>
           </li>
             <div class="collapse" id="auth">
@@ -133,35 +139,33 @@ session_start();
       </nav>
       
       <div class="container">
-      <div style="height:50px;"></div>
+	<div style="height:50px;"></div>
 	<div class="well" style="margin:auto; padding:auto; width:80%;">
 	<span style="font-size:25px; color:blue"><center><strong>Users</strong></center></span>	
 		<span class="pull-left"><a href="#addnew" data-toggle="modal" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add New</a></span>
 		<div style="height:50px;"></div>
 		<table class="table table-striped table-bordered table-hover">
 			<thead>
-				<th>Product</th>
-				<th>Description</th>
-				<th>Image</th>
-				<th>Price</th>
-                <th>Action</th>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Address</th>
+				<th>Action</th>
 			</thead>
 			<tbody>
 			<?php
-				include('connection.php');
+				include('conn.php');
 				
-				$query=mysqli_query($conn,"SELECT * FROM `shop_products` WHERE tmid=1");
+				$query=mysqli_query($conn,"select * from `register`");
 				while($row=mysqli_fetch_array($query)){
 					?>
 					<tr>
-						<td><?php echo $row['product_name']; ?></td>
-						<td><?php echo $row['product_desc']; ?></td>
-					    <td><img  class="product_image"  src="images/<?php echo $row["product_image"]; ?>"></td>
-                        <td><?php echo $row['product_price']; ?></td>
+						<td><?php echo $row['uname']; ?></td>
+						<td><?php echo $row['name']; ?></td>
+						<td><?php echo $row['email']; ?></td>
 						<td>
 							<a href="#edit<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Edit</a> || 
 							<a href="#del<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Delete</a>
-							<?php include('buttonproduct.php'); ?>
+							<?php include('button.php'); ?>
 						</td>
 					</tr>
 					<?php
@@ -171,7 +175,7 @@ session_start();
 			</tbody>
 		</table>
 	</div>
-	<?php include('add_modal_product.php'); ?>
+	<?php include('add_modal.php'); ?>
 </div>
 
 
