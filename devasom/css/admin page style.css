@@ -1,0 +1,167 @@
+#everything
+{
+
+	width: 100%;
+	overflow-x: false;
+
+
+}
+
+ * {
+   box-sizing: border-box; 
+  }
+  body {
+    margin: 0;
+  }
+  #main 
+  {
+    display: flex;
+    min-height: calc(100vh - 40vh);
+  }
+.boxer
+{
+	width:500px;
+	height:500px;
+	border:1px solid black;
+
+}
+
+
+  article
+  {
+		//  max-height: 500px;
+    
+    overflow: scroll;  
+
+}
+    ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */  
+  }
+  #main > article
+   {
+    flex: 1;
+    width: 54%;
+
+   
+  }
+  #main > nav, 
+  #main > aside
+   {
+    //flex: 0 0 20vw;
+    width: 23%;
+    background: beige;
+  }
+  #main > nav
+   {
+    order: -1;
+  }
+  header, footer, article, nav, aside
+   {
+    padding: 1em;
+  }
+  header
+{
+	width: 100%;
+  background: #4a6aa5;
+    height:20%;
+
+}  
+  
+  
+  footer
+   {
+   background: #4a6aa5;
+    height: 50px;
+    color: wheat;
+  }
+  .add_user
+  {
+		margin-top:10px;  
+  		width: 100%;
+  
+  }
+  .add
+  {
+	margin-bottom:20px;  
+	padding: 10px;
+  
+  
+  
+  }
+  .add_image
+  {
+	  margin-left: 20%;
+		width:70%;
+		height:200px;  
+  
+  
+  
+  }
+  .submit {
+    background-color:#86afef;
+    border: 3px solid #1b6ae5;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+th,tr,td
+{
+	border:2px solid #1b6ae5;
+	padding:10px;
+
+
+
+}
+.small
+{
+	width: 20px;
+	height: 20px;
+
+}
+button
+{
+
+	border:none;
+
+}
+.logout
+{
+	font-size: 20px;
+	margin-left:80%;
+	text-decoration: none;
+	color: wheat;
+
+
+}
+ul,li
+{
+float: left;
+
+}
+a
+{
+	margin-left: 3%;
+	//margin-left: 90%;
+	text-decoration: none;
+	color: wheat;
+	font-size: 20px;
+
+}
+h1
+{
+ color: wheat;
+ font-weight: bold;
+ font-size: 45px;
+
+
+}
+.highlight
+{
+//	background-color: grey;
+	border:2px solid #1b6ae0;
+
+}

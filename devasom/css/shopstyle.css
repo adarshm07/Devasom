@@ -1,0 +1,212 @@
+
+ * {
+  box-sizing: border-box; 
+  }
+  body {
+    margin: 0;
+  }
+  #main 
+  {
+    display: flex;
+    min-height: calc(100vh - 40vh);
+  }
+  article
+  {
+		  max-height: 500px;
+    
+ 
+
+}
+  textarea
+  {
+		width:200px;
+		height: 100px;
+		margin-left:7%; 
+  
+  }
+  #main > article
+   {
+    flex: 1;
+   
+  }
+  #main > nav, 
+  #main > aside
+   {
+    flex: 0.2 0 20vw;
+    background: beige;
+   
+  }
+  #main > nav
+   {
+    order: -1;
+  }
+  header, footer, article, nav, aside
+   {
+    padding: 1em;
+  }
+  header
+{
+  background: #4a6aa5;
+    height:200px;
+    
+
+} 
+.hr
+{
+	margin-top: 40px;
+	margin-bottom: 20px;
+color:#4a6aa5;
+width: 100%;
+height: 270px;
+border:3px solid #4a6aa5;
+
+//background-color: #4a6aa5;
+
+}
+
+.earn
+{
+	width: 250px;
+	height: 140px;
+
+
+} 
+.eyuth
+{
+	padding-top: 10px;
+
+
+}
+div
+{
+	color: #4a6aa5;
+ font-weight: bold;
+}
+h2
+{
+	color: #4a6aa5;
+	padding: 0px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+  .add_user
+  {
+		margin-top:10px;  
+  
+  
+  }
+  .add
+  {
+	margin-bottom:20px;  
+	padding: 10px;
+  decoration-none;
+  
+  
+  } 
+  
+  footer
+   {
+   background: #4a6aa5;
+    height: 50px;
+    color: wheat;
+  }
+  .add_user
+  {
+		margin-top:10px;  
+  
+  
+  }
+ 
+  .submit {
+    background-color:#86afef;
+    border: 3px solid #1b6ae5;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+th,tr,td
+{
+	border:2px solid #1b6ae5;
+	padding:10px;
+
+
+
+}
+
+button
+{
+
+	border:none;
+
+}
+a
+{
+	//margin-left: 1200px;
+	text-decoration: none;
+	color: wheat;
+	//font-size: 20px;
+
+
+}
+li
+{
+	color: white;
+	text-decoration:none;
+	float: left;
+	margin-right:30px;
+	decoration:none; 
+	 list-style-type:none; 
+	 font-size: 20px;
+	
+}
+.lgout
+{
+	margin-left: 50%;
+
+}
+h1
+{
+ color: wheat;
+ font-weight: bold;
+ font-size: 45px;
+
+
+}
+/* For Firefox */
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input[type=number]
+{
+	width: 262px;
+
+}
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+
+    -webkit-appearance: none;
+    
+    margin-bottom:20px;  
+	
+}
+.img
+{
+  margin-left: 35px;
+		width:150px;
+		height:150px;  
+margin-bottom: 0px;
+  
+}
+#down
+{
+	margin-bottom: 20px;
+	margin-top: 20px;
+
+
+}
+

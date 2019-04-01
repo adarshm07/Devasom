@@ -1,22 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
--- https://www.phpmyadmin.net/
+-- version 3.5.1
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Feb 04, 2019 at 07:26 PM
--- Server version: 5.7.23
--- PHP Version: 5.6.38
+-- Host: localhost
+-- Generation Time: Feb 19, 2019 at 06:50 PM
+-- Server version: 5.5.24-log
+-- PHP Version: 5.4.3
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `devasom`
@@ -28,164 +26,239 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
-DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) DEFAULT NULL,
-  `email` varchar(20) DEFAULT NULL,
-  `password` varchar(99) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `username` varchar(30) NOT NULL,
+  `password` text,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `username`, `email`, `password`) VALUES
-(1, 'admin', 'admin@mail.com', '202cb962ac59075b964b07152d234b70');
+INSERT INTO `admin` (`username`, `password`) VALUES
+('admin', 'admin');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cat`
+-- Table structure for table `admin_cart`
 --
 
-DROP TABLE IF EXISTS `cat`;
-CREATE TABLE IF NOT EXISTS `cat` (
-  `cname` varchar(20) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `cat`
---
-
-INSERT INTO `cat` (`cname`) VALUES
-('devasom'),
-('prasadam');
+CREATE TABLE IF NOT EXISTS `admin_cart` (
+  `uid` text,
+  `pid` text,
+  `date` text,
+  `price` text,
+  `assign` text,
+  `status` text,
+  `name` text,
+  `address` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `complaint`
+-- Table structure for table `cart`
 --
 
-DROP TABLE IF EXISTS `complaint`;
-CREATE TABLE IF NOT EXISTS `complaint` (
+CREATE TABLE IF NOT EXISTS `cart` (
+  `uid` text,
+  `pid` text,
+  `date` text,
+  `price` int(11) DEFAULT NULL,
+  `assign` text,
+  `status` text,
+  `name` text,
+  `address` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `collection`
+--
+
+CREATE TABLE IF NOT EXISTS `collection` (
+  `hid` text,
+  `housename` text,
+  `customername` text,
+  `address` text,
+  `employee` text,
+  `litre` int(11) DEFAULT NULL,
+  `quality` int(11) DEFAULT NULL,
+  `total` int(11) DEFAULT NULL,
+  `date` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `collection`
+--
+
+INSERT INTO `collection` (`hid`, `housename`, `customername`, `address`, `employee`, `litre`, `quality`, `total`, `date`) VALUES
+('6', 'house1', 'customer1', 'address1', '5', 5, 2, 20, '13/02/19'),
+('6', 'house1', 'customer1', 'address1', '5', 10, 10, 200, '13/02/19');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employee`
+--
+
+CREATE TABLE IF NOT EXISTS `employee` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) NOT NULL,
-  `email` varchar(200) NOT NULL,
-  `number` bigint(10) NOT NULL,
-  `cname` varchar(200) NOT NULL,
-  `subject` varchar(900) NOT NULL,
-  `description` varchar(900) NOT NULL,
+  `name` text,
+  `email` text,
+  `mobile` text,
+  `username` text,
+  `password` text,
+  `type` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
--- Dumping data for table `complaint`
+-- Dumping data for table `employee`
 --
 
-INSERT INTO `complaint` (`id`, `name`, `email`, `number`, `cname`, `subject`, `description`) VALUES
-(2, 'akjdb', 'bjkbjkbjk@mail.com', 4698268, 'devasom', 'akdbajajkb', 'alknann');
+INSERT INTO `employee` (`id`, `name`, `email`, `mobile`, `username`, `password`, `type`) VALUES
+(7, 'rhul', '123@gmail.com', '12324345789', 'rahul', '123', 'driver'),
+(8, 'manager1', '123@gmail.com', '1234567', 'manager1', '123', 'Manager');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `manager`
+-- Table structure for table `house`
 --
 
-DROP TABLE IF EXISTS `manager`;
-CREATE TABLE IF NOT EXISTS `manager` (
+CREATE TABLE IF NOT EXISTS `house` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) DEFAULT NULL,
-  `email` varchar(40) DEFAULT NULL,
-  `password` varchar(40) DEFAULT NULL,
-  `userrole` varchar(20) DEFAULT NULL,
+  `housename` text,
+  `customername` text,
+  `address` text,
+  `employee` text,
+  `acc` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
--- Dumping data for table `manager`
+-- Dumping data for table `house`
 --
 
-INSERT INTO `manager` (`id`, `username`, `email`, `password`, `userrole`) VALUES
-(1, 'tm1', 'tm1@gmail.com', '202cb962ac59075b964b07152d234b70', 'tm1'),
-(2, 'tm2', 'tm2@gmail.com', '202cb962ac59075b964b07152d234b70', 'tm2'),
-(3, 'tm3', 'tm3@gmail.com', '202cb962ac59075b964b07152d234b70', 'tm3'),
-(4, 'tm4', 'tm4@gmail.com', '202cb962ac59075b964b07152d234b70', 'tm4');
+INSERT INTO `house` (`id`, `housename`, `customername`, `address`, `employee`, `acc`) VALUES
+(2, 'sample', 'sample', 'sample', '4', NULL),
+(3, 'sreekaryam', 'aslkdjf', 'lsdkjf', '4', NULL),
+(5, 'shamnad', 'shamnad', 'kannur', '4', '123456789'),
+(6, 'house1', 'customer1', 'address1', '5', '1236549879');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `register`
+-- Table structure for table `leaves`
 --
 
-DROP TABLE IF EXISTS `register`;
-CREATE TABLE IF NOT EXISTS `register` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `uname` varchar(20) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `mobile` varchar(15) NOT NULL,
-  `pwd` varchar(20) DEFAULT NULL,
-  `image` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `leaves` (
+  `type` text,
+  `date` text,
+  `status` text,
+  `id` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `register`
+-- Dumping data for table `leaves`
 --
 
-INSERT INTO `register` (`id`, `uname`, `name`, `email`, `mobile`, `pwd`, `image`) VALUES
-(1, 'admin', 'admin', 'admin@gmail.com', '975467890', '123', ''),
-(10, 'user', 'user', 'user@mail.com', '4567890', '', '');
+INSERT INTO `leaves` (`type`, `date`, `status`, `id`) VALUES
+('Medical Leave', '123', 'Reject', '4'),
+('Medical Leave', '234', 'Reject', '4'),
+('Medical Leave', '789', 'Reject', '1'),
+('Medical Leave', '', 'Reject', '1'),
+('Medical Leave', '12/10/2019', 'Reject', '1'),
+('Casual Leave', '123', 'Reject', '4'),
+('Medical Leave', '456', 'Applied', '4');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbluser`
+-- Table structure for table `loan`
 --
 
-DROP TABLE IF EXISTS `tbluser`;
-CREATE TABLE IF NOT EXISTS `tbluser` (
+CREATE TABLE IF NOT EXISTS `loan` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `userName` varchar(200) DEFAULT NULL,
-  `userPassword` varchar(255) DEFAULT NULL,
+  `type` text,
+  `name` text,
+  `month` int(11) DEFAULT NULL,
+  `date` text,
+  `file` text,
+  `status` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
--- Dumping data for table `tbluser`
+-- Dumping data for table `loan`
 --
 
-INSERT INTO `tbluser` (`id`, `userName`, `userPassword`) VALUES
-(1, 'admin', 'f925916e2754e5e03f75dd58a5733251');
+INSERT INTO `loan` (`id`, `type`, `name`, `month`, `date`, `file`, `status`) VALUES
+(5, 'Vehicle Loan', '1', 4, '14/02/19', '', 'Reject'),
+(6, 'Educational Loan', '1', 5, '14/02/19', '', 'Reject'),
+(7, 'Educational Loan', '4', 1, '14/02/19', '', 'Reject'),
+(8, 'Educational Loan', '4', 1, '14/02/19', '', 'Reject');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `payment`
 --
 
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE IF NOT EXISTS `user` (
+CREATE TABLE IF NOT EXISTS `payment` (
+  `uid` text,
+  `name` text,
+  `email` text,
+  `address` text,
+  `city` text,
+  `state` text,
+  `zip` text,
+  `cardnumber` text,
+  `expmonth` text,
+  `expyear` text,
+  `cvv` text,
+  `price` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE IF NOT EXISTS `product` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `firstname` varchar(30) NOT NULL,
-  `lastname` varchar(30) NOT NULL,
-  `address` varchar(100) NOT NULL,
+  `name` text,
+  `description` text,
+  `file` text,
+  `price` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `product`
 --
 
-INSERT INTO `user` (`id`, `firstname`, `lastname`, `address`) VALUES
-(1, 'neovic', 'devierte', 'silay city'),
-(2, 'dee', 'tolentino', 'bacolod city'),
-(4, 'julyn', 'divinagracia', 'eb magalona'),
-(6, 'lee', 'ann', 'employee sudb'),
-(7, 'akdbj', 'hfakj', 'kafj@mail.com');
+INSERT INTO `product` (`id`, `name`, `description`, `file`, `price`) VALUES
+(22, 'ARAVANA', '', 'https://www.tipzstyle.com/wp-content/uploads/2016/10/aravana.jpg', 100),
+(23, 'PALPAYASAM', '', 'https://2.bp.blogspot.com/-Rc2Tl7uE9WA/Wb8Z3cRgQUI/AAAAAAAAB-c/JI1rXO0ovEciIcQtiaOoI61mxniFOgZEQCLcBGAs/s1600/Paal%2BPayasam-01_wm.jpg', 250),
+(24, 'UNNIYAPPAM', '', 'http://ingrid.zcubes.com/zcommunity/contentfiles/blog/dsc_0044-imp_-2064467424_P.jpg', 200),
+(25, 'VADA MALA', '', 'https://tse2.mm.bing.net/th?id=OIP.c8yEV5FSFmezi3vHxyUIIwDIEs', 220),
+(26, 'POOJITHA CHARADU', '', 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Kalava_Mauli_Wikipedia.jpg', 80);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `total_made`
+--
+
+CREATE TABLE IF NOT EXISTS `total_made` (
+  `total` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -193,25 +266,41 @@ INSERT INTO `user` (`id`, `firstname`, `lastname`, `address`) VALUES
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
+  `name` text,
+  `email` text,
+  `mobile` text,
+  `username` text,
+  `password` text,
+  `address` text,
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `userrole` varchar(20) DEFAULT 'user',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `userrole`) VALUES
-(2, 'user', 'user@mail.com', '202cb962ac59075b964b07152d234b70', 'user'),
-(3, 'bjk', 'bjk@mail.com', '202cb962ac59075b964b07152d234b70', 'user'),
-(4, 'templemanager1', 'manager1@gmail.com', '202cb962ac59075b964b07152d234b70', '');
-COMMIT;
+INSERT INTO `users` (`name`, `email`, `mobile`, `username`, `password`, `address`, `id`) VALUES
+('haritha', 'haritha@gmail.com', '8281252491', 'rahul', 'rahul', NULL, 11),
+('ameer', 'ameer@ameer', 'sldkjfkl', 'am', 'am', NULL, 12);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `views`
+--
+
+CREATE TABLE IF NOT EXISTS `views` (
+  `views` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `views`
+--
+
+INSERT INTO `views` (`views`) VALUES
+(21);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
