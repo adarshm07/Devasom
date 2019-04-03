@@ -57,7 +57,7 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li class="active"><a href="collector.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+			<li class="active"><a href="deliver.php"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 				<li><a href="account.php"><em class="fa fa-user">&nbsp;</em> Account</a></li>
 			<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>
@@ -103,7 +103,10 @@
 								</div>					
 								
 							<div class="form-group">
-									<input type="date" placeholder="Date" name="date" class="form-control">							
+									<input type="date" placeholder="From" name="date" class="form-control">							
+							</div>
+							<div class="form-group">
+									<input type="date" placeholder="To" name="date1" class="form-control">							
 							</div>
 						
 							<center>
@@ -121,12 +124,13 @@
 					<div class="panel-heading">
 				Leave status
 					</div>
-						 <table class="table table-striped">
+							 <table class="table table-striped">
   								  <thead>
      									 <tr>
      									 	<th>No</th>
     									    <th>Type</th>
-       									 <th>Date</th>
+       									 <th>From</th>
+										<th>To</th>
        									 <th>Status</th>
      									 </tr>
    							 </thead>
@@ -146,7 +150,14 @@
     														echo "</td>";
     														echo "<td>";
     															echo $row['date'];
-    														echo "</td>";
+															echo "</td>";
+															
+		
+		
+															echo "<td>";
+    															echo $row['date1'];
+															echo "</td>";
+															
     																	echo "<td>";
     															echo $row['status'];
     														echo "</td>";

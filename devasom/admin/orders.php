@@ -75,8 +75,7 @@
      									 </tr>
    							 </thead>
    							 <tbody>
-   							 		<?php 
-   							 			session_start();
+   							 		<?php
    							 			include '../database.php';
    							 			$sql = "select uid from admin_cart group by uid;";
    							 			$res = mysqli_query($conn,$sql);

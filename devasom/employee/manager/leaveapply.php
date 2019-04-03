@@ -1,7 +1,8 @@
 <?php
 session_start();
 		$type = $_POST['loantype'];
-		$loanmonth = $_POST['date'];
+    $loanmonth = $_POST['date'];
+    $date1 = $_POST['date1'];
 		$id = $_SESSION['empid'];
  /*$folder_path = 'uploads/';
 
@@ -17,7 +18,7 @@ session_start();
     }
     */
     include '../../database.php';
-  	$sql = "insert into leaves (type,date,status,id) values ('$type','$loanmonth','Applied','$id')"; 
+  	$sql = "insert into leaves (type,date, date1, status,id) values ('$type','$loanmonth','$date1','Applied','$id')"; 
        $result = mysqli_query($conn, $sql); 
     	Header("Location:leave.php");
 ?>

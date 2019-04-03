@@ -72,7 +72,7 @@
         <a class="navbar-brand" href="#">Dashboard</a>
         <a class="navbar-brand" href="leave.php">Leave</a>
         <a class="navbar-brand" href="stock.php">Add Pooja</a>
-        <a class="navbar-brand" href="http://localhost/devasom/devasom/user/south/viewproduct.php">View Pooja</a>
+        <a class="navbar-brand" href="http://localhost/devasom/devasom/devasom/user/south/viewproduct.php">View Pooja</a>
         <a class="navbar-brand" href="../../logout.php">Logout</a>
        
 			</div>
